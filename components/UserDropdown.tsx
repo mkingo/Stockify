@@ -13,10 +13,10 @@ import {useRouter} from "next/navigation";
 import {Button} from "@/components/ui/button";
 import {LogOut} from "lucide-react";
 import NavItems from "@/components/NavItems";
-// import {signOut} from "@/lib/actions/auth.actions";
+import {signOut} from "@/lib/actions/auth.actions";
 
 const UserDropdown = (
-    // { user, initialStocks }: {user: User, initialStocks: StockWithWatchlistStatus[]}
+    { user }: {user: User}
 ) => {
     const router = useRouter();
 
@@ -66,7 +66,9 @@ const UserDropdown = (
                 </DropdownMenuItem>
                 <DropdownMenuSeparator className="hidden sm:block bg-gray-600"/>
                 <nav className="sm:hidden">
-                    <NavItems initialStocks={initialStocks} />
+                    <NavItems
+                        // initialStocks={initialStocks}
+                    />
                 </nav>
             </DropdownMenuContent>
         </DropdownMenu>
