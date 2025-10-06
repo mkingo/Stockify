@@ -8,6 +8,21 @@ import Link from "next/link";
 import {searchStocks} from "@/lib/actions/finnhub.actions";
 import {useDebounce} from "@/hooks/useDebounce";
 
+/**
+ * Render a searchable stock picker trigger and modal dialog.
+ *
+ * Displays a trigger (button or text) that opens a command-style dialog for searching and selecting stocks.
+ * The dialog:
+ * - toggles via the trigger or the keyboard shortcut Cmd/Ctrl+K,
+ * - debounces user input and queries `searchStocks` for search results,
+ * - shows a loading state, "No results found" when a search returns nothing, or a list of popular stocks when not searching,
+ * - closes and resets its search state when a stock is selected.
+ *
+ * @param renderAs - "button" to render a Button trigger, "text" to render a plain clickable span (default: "button")
+ * @param label - Trigger label text (default: "Add stock")
+ * @param initialStocks - Initial list of stocks shown when not searching
+ * @returns The SearchCommand React element
+ */
 export default function SearchCommand({ renderAs = 'button', label = 'Add stock', initialStocks }: SearchCommandProps) {
     const [open, setOpen] = useState(false)
     const [searchTerm, setSearchTerm] = useState("")
