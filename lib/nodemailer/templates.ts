@@ -151,8 +151,8 @@ export const WELCOME_EMAIL_TEMPLATE = `<!DOCTYPE html>
                             <!-- Footer Text -->
                             <p class="mobile-text dark-text-muted" style="margin: 40px 0 0 0; font-size: 14px; line-height: 1.5; color: #CCDADC !important; text-align: center;">
                                Stockify HQ, 200 Market Street, San Francisco, CA 94105<br>
-                                <a href="#" style="color: #CCDADC !important; text-decoration: underline;">Unsubscribe</a> | 
-                                <a href="https://stock-market-dev.vercel.app/" style="color: #CCDADC !important; text-decoration: underline;">Visit Stockify</a><br>
+                                <a href="${process.env.STOCKIFY_APP_URL}/unsubscribe" style="color: #CCDADC !important; text-decoration: underline;">Unsubscribe</a> | 
+                                <a href="${process.env.STOCKIFY_APP_URL}/" style="color: #CCDADC !important; text-decoration: underline;">Visit Stockify</a><br>
                                 © 2025 Stockify
                             </p>
                         </td>
@@ -287,8 +287,8 @@ export const NEWS_SUMMARY_EMAIL_TEMPLATE = `<!DOCTYPE html>
                                     You're receiving this because you subscribed to Stockify news updates.
                                 </p>
                                 <p style="margin: 0 0 10px 0; font-size: 14px; line-height: 1.5; color: #CCDADC !important;">
-                                    <a href="#" style="color: #CCDADC !important; text-decoration: underline;">Unsubscribe</a> | 
-                                    <a href="https://Stockify.app" style="color: #CCDADC !important; text-decoration: underline;">Visit Stockify</a>
+                                    <a href="${process.env.STOCKIFY_APP_URL}/unsubscribe" style="color: #CCDADC !important; text-decoration: underline;">Unsubscribe</a> | 
+                                    <a href="${process.env.STOCKIFY_APP_URL}/" style="color: #CCDADC !important; text-decoration: underline;">Visit Stockify</a>
                                 </p>
                                 <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #CCDADC !important;">
                                     © 2025 Stockify
@@ -496,8 +496,8 @@ export const STOCK_ALERT_UPPER_EMAIL_TEMPLATE = `<!DOCTYPE html>
                                     You're receiving this because you subscribed to Stockify news updates.
                                 </p>
                                 <p style="margin: 0 0 10px 0; font-size: 14px; line-height: 1.5; color: #CCDADC !important;">
-                                    <a href="#" style="color: #CCDADC !important; text-decoration: underline;">Unsubscribe</a> | 
-                                    <a href="https://Stockify.app" style="color: #CCDADC !important; text-decoration: underline;">Visit Stockify</a>
+                                    <a href="${process.env.STOCKIFY_APP_URL}/unsubscribe" style="color: #CCDADC !important; text-decoration: underline;">Unsubscribe</a> | 
+                                    <a href="${process.env.STOCKIFY_APP_URL}/" style="color: #CCDADC !important; text-decoration: underline;">Visit Stockify</a>
                                 </p>
                                 <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #CCDADC !important;">
                                     © 2025 Stockify
@@ -705,8 +705,8 @@ export const STOCK_ALERT_LOWER_EMAIL_TEMPLATE = `<!DOCTYPE html>
                                     You're receiving this because you subscribed to Stockify news updates.
                                 </p>
                                 <p style="margin: 0 0 10px 0; font-size: 14px; line-height: 1.5; color: #CCDADC !important;">
-                                    <a href="#" style="color: #CCDADC !important; text-decoration: underline;">Unsubscribe</a> | 
-                                    <a href="https://Stockify.app" style="color: #CCDADC !important; text-decoration: underline;">Visit Stockify</a>
+                                    <a href="${process.env.STOCKIFY_APP_URL}/unsubscribe" style="color: #CCDADC !important; text-decoration: underline;">Unsubscribe</a> | 
+                                    <a href="${process.env.STOCKIFY_APP_URL}/" style="color: #CCDADC !important; text-decoration: underline;">Visit Stockify</a>
                                 </p>
                                 <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #CCDADC !important;">
                                     © 2025 Stockify
@@ -925,8 +925,8 @@ export const VOLUME_ALERT_EMAIL_TEMPLATE = `<!DOCTYPE html>
                                     You're receiving this because you subscribed to Stockify news updates.
                                 </p>
                                 <p style="margin: 0 0 10px 0; font-size: 14px; line-height: 1.5; color: #CCDADC !important;">
-                                    <a href="#" style="color: #CCDADC !important; text-decoration: underline;">Unsubscribe</a> | 
-                                    <a href="https://Stockify.app" style="color: #CCDADC !important; text-decoration: underline;">Visit Stockify</a>
+                                    <a href="${process.env.STOCKIFY_APP_URL}/unsubscribe" style="color: #CCDADC !important; text-decoration: underline;">Unsubscribe</a> | 
+                                    <a href="${process.env.STOCKIFY_APP_URL}/" style="color: #CCDADC !important; text-decoration: underline;">Visit Stockify</a>
                                 </p>
                                 <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #CCDADC !important;">
                                     © 2025 Stockify
