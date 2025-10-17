@@ -20,6 +20,19 @@ export async function GET(req: NextRequest) {
   }
 
   if (emailParam) {
+    const authHeader = req.headers.get('authorization') || '';
+    const m = authHeader.match(/^Bearer\s+(.+)$/i);
+    if (!m) {
+      return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
+    }
+    const bearerToken = m[1].trim();
+    const verifiedEmail = verifyUnsubscribeToken(bearerToken);
+    if (!verifiedEmail) {
+      return NextResponse.json({ success: false, message: 'Invalid token' }, { status: 401 });
+    }
+    if (verifiedEmail !== emailParam.toLowerCase()) {
+      return NextResponse.json({ success: false, message: 'Forbidden' }, { status: 403 });
+    }
     await suppressEmail(emailParam, 'api');
     return NextResponse.json({ success: true, message: 'Unsubscribed' });
   }
@@ -61,6 +74,19 @@ export async function POST(req: NextRequest) {
   }
 
   if (emailParam) {
+    const authHeader = req.headers.get('authorization') || '';
+    const m = authHeader.match(/^Bearer\s+(.+)$/i);
+    if (!m) {
+      return new NextResponse('Unauthorized', { status: 401, headers: { 'content-type': 'text/plain; charset=utf-8' } });
+    }
+    const bearerToken = m[1].trim();
+    const verifiedEmail = verifyUnsubscribeToken(bearerToken);
+    if (!verifiedEmail) {
+      return new NextResponse('Invalid token', { status: 401, headers: { 'content-type': 'text/plain; charset=utf-8' } });
+    }
+    if (verifiedEmail !== emailParam.toLowerCase()) {
+      return new NextResponse('Forbidden', { status: 403, headers: { 'content-type': 'text/plain; charset=utf-8' } });
+    }
     await suppressEmail(emailParam, 'api');
     return new NextResponse('OK', { status: 200, headers: { 'content-type': 'text/plain; charset=utf-8' } });
   }
